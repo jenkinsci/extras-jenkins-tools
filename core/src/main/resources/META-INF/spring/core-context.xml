@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="velocityProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:/META-INF/properties/velocity.properties"/>
+    </bean>
+
+    <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+        <property name="resourceLoaderPath" value="classpath*:/META-INF/velocity"/>
+        <property name="velocityProperties" ref="velocityProperties"/>
+    </bean>
+
+    <bean id="jobConfigGenerator" class="org.jvnet.hudson.generators.JobConfigGenerator"
+          autowire="byName">
+        <qualifier value="jobConfigGenerator"/>
+        <property name="velocityEngine" ref="velocityEngine"/>
+    </bean>
+
+    <bean id="hudsonConfigGenerator" class="org.jvnet.hudson.generators.HudsonConfigGenerator"
+          autowire="byName">
+        <qualifier value="hudsonConfigGenerator"/>
+        <property name="velocityEngine" ref="velocityEngine"/>
+    </bean>
+
+</beans>

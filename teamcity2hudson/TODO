@@ -1,0 +1,4 @@
+
+
+- Test against the latest TeamCity
+- Clear up the Spring logging initialization messages 

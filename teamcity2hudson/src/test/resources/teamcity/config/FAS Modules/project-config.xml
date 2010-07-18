@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "../project-config.dtd">
+
+<project id="project185">
+  <description>A parent TC project for all fas-parent subprojects. Each subproject listens for the changes in its SVN tree and uploads only its artifacts</description>
+  <build-type id="bt544" name="Atom index" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description>Note: don't run at kriek because performance tests fail there</description>
+    <requirements>
+      <does-not-equal name="system.agent.name" value="kriek" />
+    </requirements>
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="atom-index=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt547" name="Atom storage" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="atom-storage=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt600" name="Bulgarian Stemmer" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/bulgarian-stemmer*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="analyzers/bulgarian-stemmer=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt687" name="Business Common Lang" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="business-common-lang=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt688" name="Business Manager" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="runnerArgs" value="-U -Dthis.is=that -Dfoo=bar -Dbar -P" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters>
+      <param name="env.MAVEN_OPTS" value="-Xmx512m -Xms256m" />
+    </parameters>
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+      <triggered-by buildTypeId="bt687" />
+      <triggered-by buildTypeId="bt671" />
+    </build-triggers>
+    <dependencies>
+      <depend-on sourceBuildTypeId="bt690">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="bt671">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="bt698">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="business-manager=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt807" name="Campaign Lang" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements>
+      <does-not-equal name="system.agent.name" value="kriek" />
+    </requirements>
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="runnerArgs" value="-X" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+      <triggered-by buildTypeId="bt687" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="campaign-lang=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt808" name="Campaign Management (backend)" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="maven.home" value="%env.MAVEN_HOME%" />
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="campaign-management=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt751" name="campaign-rest-api" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="campaign-rest-api=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt574" name="Config model" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="config-model=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt690" name="FAS API" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="%env.MAVEN_HOME%" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="fas-api=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt624" name="FAS Connection Utils" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/fas-connection-utils*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="fas-connection-utils=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt548" name="FAS Launcher" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy site:site site:deploy" />
+      <param name="maven.home" value="%env.MAVEN_HOME%" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="fas-launcher=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt549" name="FAS Resources" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="fas-resources=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt576" name="FAS Utils" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="fas-utils=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt606" name="FVT" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy site:site site:deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/fvt*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="tests/fvt=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt550" name="Heatmap" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy site:site site:deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="heatmap=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt552" name="jmx-client" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy site:site site:deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="jmx-client=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt643" name="JUnit Theory Helpers" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="%env.MAVEN_HOME%" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/junit-theory-helpers*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="tests/junit-theory-helpers=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt671" name="Knowledge Model" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="*/target/*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="knowledge-model=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt729" name="Knowledge Model - Basetypes Impl" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="*/target/*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="knowledge-model-basetypes-impl=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt558" name="Log Analyzer" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy site:site site:deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="tests/log-analyzer=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt559" name="Log Replay" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy site:site site:deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/*jar-with-dependencies.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="tests/logreplay=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt582" name="Parent POM" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="%env.MAVEN_HOME%" />
+      <param name="runnerArgs" value="-N" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="parent-pom=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt553" name="Preview pages" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="preview-pages=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt762" name="Preview pages [1.0-branch]" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="4" set-label="false">
+      <checkout-rule rule="fas-parent/preview-pages-1.0-branch=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt560" name="QA Tools" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy site:site site:deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="tests/qa-tools=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt798" name="Query Matcher" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="DO_NOT_USE" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="query-matcher=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt610" name="Reflective Matcher" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="tests/reflective-matcher=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt557" name="Rules Debug" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <dependencies>
+      <depend-on sourceBuildTypeId="bt610">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="tests/rules-debug=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt589" name="Rules Debug TGA-23" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy site:site site:deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="4" set-label="false">
+      <checkout-rule rule="fas-parent/tests/rules-debug/TGA-23=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt765" name="Schedule Language" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="schedule-lang=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt819" name="Schedule Language [1.0-alpha-1]" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="false" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="57" set-label="false">
+      <checkout-rule rule="schedule-lang-1.0-alpha-1=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt856" name="Schedule Language [1.0]" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="false" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="57" set-label="false">
+      <checkout-rule rule="schedule-lang-1.0=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt578" name="Services" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description>Provides the API to use IServiceManager</description>
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy site:site site:deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="services=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt554" name="Status servlet" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy site:site site:deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="status-servlet=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt593" name="Stress Test" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy site:site site:deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/stress-test*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="tests/stress-test=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt599" name="Stress Test Deployment Agent" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/stress-test-deployment-agent-*" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="tests/stress-test-deployment-agent=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt736" name="Targeting - Basetypes Adapters Impl" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="*/target/*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="basetypes-adapters-impl=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt722" name="Targeting Management" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="targeting-management=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt708" name="Test Jar" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description>A jar file used as a test data for the tests of other projects</description>
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="tests/test-jar=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt694" name="Tests" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="%env.MAVEN_HOME%" />
+      <param name="runnerArgs" value="-N" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="tests=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt821" name="Translation Page" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="bm-translation-page=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt780" name="Translations API" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="i18n-api=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt781" name="Translations REST API" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="i18n-rest-api=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt637" name="Util Profile" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description>Utility for reading SUN profile files</description>
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy" />
+      <param name="maven.home" value="%env.MAVEN_HOME%" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/util-profile*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="util-profile=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt556" name="Webservice client" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy site:site site:deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/*.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="ws-client=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt555" name="Webservice server" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean deploy site:site site:deploy" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <artifact-publishing paths="target/fredhopper-ws.war,target/fredhopper-ws-sources.jar" />
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="webservice-soap=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+</project>
+

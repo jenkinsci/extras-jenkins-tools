@@ -1,0 +1,7 @@
+<config>
+    <jdkHome>/java/jdk1.6.0_19</jdkHome>
+    <mavenHome>/java/apache/maven-2.2.1</mavenHome>
+    <antHome>/java/apache/ant-1.8.0</antHome>
+    <hudsonHome>/java/hudson</hudsonHome>
+    <jettyHome>/java/jetty</jettyHome>
+</config>

@@ -1,0 +1,12 @@
+<jobs>
+    <job>
+        <projectName>test-project1</projectName>
+        <scmURL>https://dev.test-project1.com/subversion/trunk</scmURL>
+        <mavenGoals>clean deploy</mavenGoals>
+    </job>
+    <job>
+        <mavenGoals>clean deploy site site:deploy</mavenGoals>
+        <projectName>test-project2</projectName>
+        <scmURL>https://dev.test-project2.com/subversion/trunk</scmURL>
+    </job>
+</jobs>

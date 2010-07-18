@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "../project-config.dtd">
+
+<project id="project211">
+  <build-type id="bt849" name="API Documentation" run-type="Ant" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <options>
+      <option name="executionTimeoutMin" value="30" />
+    </options>
+    <requirements>
+      <contains name="system.os.name" value="Linux" />
+    </requirements>
+    <run-parameters>
+      <param name="build-file-path" value="build.xml" />
+      <param name="target" value="clean devdoc-zip" />
+      <param name="coverage.instr.parameters" value="-ix -*Test*" />
+      <param name="coverage.include.source" value="true" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <scheduler hour="7" minute="0" skip-build-without-changes="true" />
+    </build-triggers>
+    <artifact-publishing paths="dev/doc/api.zip" />
+    <vcs-entry-ref root-id="1" set-label="false">
+      <checkout-rule rule="branches/FAS6_5-branch=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt850" name="checker build (linux)" run-type="Ant" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <options>
+      <option name="allowExternalStatus" value="true" />
+      <option name="executionTimeoutMin" value="60" />
+      <option name="maximumNumberOfBuilds" value="1" />
+    </options>
+    <requirements>
+      <contains name="system.os.name" value="Linux" />
+    </requirements>
+    <run-parameters>
+      <param name="build-file-path" value="build.xml" />
+      <param name="coverage.enabled" value="true" />
+      <param name="target" value="clean war reporting test-reports-zip" />
+      <param name="teamcity.tests.runRiskGroupTestsFirst" value="recentlyFailed,newAndModified" />
+      <param name="coverage.instr.parameters" value="-ix -*Test* -ix -*CheckMessageFile* -ix -*GetJavaOptions* -ix -*DatabaseUtilsTest* -ix -*OtherVMConnectionUser*" />
+      <param name="coverage.include.source" value="true" />
+      <param name="jvmArgs" value="-Xmx768m" />
+    </run-parameters>
+    <parameters>
+      <param name="system.jsp.compile" value="true" />
+      <param name="system.compile.debuglevel" value="lines,vars,source" />
+      <param name="system.compile.debug" value="on" />
+      <param name="system.is.release" value="false" />
+      <param name="system.xsl.compile" value="true" />
+    </parameters>
+    <build-triggers sleeping-interval-sec="30">
+      <triggered-by buildTypeId="bt576" />
+      <triggered-by buildTypeId="bt630" />
+      <triggered-by buildTypeId="bt555" />
+      <triggered-by buildTypeId="bt550" />
+      <triggered-by buildTypeId="bt798" />
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="DO_NOT_USE">
+        <ignore-files>
+          <pattern>-:dev/doc/</pattern>
+          <pattern>-:bin/</pattern>
+          <pattern>-:dev/qa/</pattern>
+          <pattern>-:dev/qa/</pattern>
+        </ignore-files>
+      </vcs>
+      <triggered-by buildTypeId="bt554" />
+      <triggered-by buildTypeId="bt552" />
+      <triggered-by buildTypeId="bt553" />
+    </build-triggers>
+    <artifact-publishing paths="dev/build/test/reports.zip" />
+    <vcs-entry-ref root-id="1" set-label="false">
+      <checkout-rule rule="branches/FAS6_5-branch=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+  <build-type id="bt854" name="snapshot build (linux)" run-type="Ant" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <options>
+      <option name="allowExternalStatus" value="true" />
+      <option name="executionTimeoutMin" value="60" />
+    </options>
+    <requirements>
+      <contains name="system.os.name" value="Linux" />
+    </requirements>
+    <run-parameters>
+      <param name="build-file-path" value="build.xml" />
+      <param name="ant.home" value="/tools/apache-ant-1.7.1" />
+      <param name="target" value="release" />
+      <param name="coverage.instr.parameters" value="-ix -*Test*" />
+      <param name="coverage.include.source" value="true" />
+      <param name="jvmArgs" value="-Xmx768m" />
+    </run-parameters>
+    <parameters>
+      <param name="system.release.name" value="snapshot" />
+      <param name="system.autobuild.branch" value="branches/FAS6_5-branch" />
+    </parameters>
+    <build-triggers sleeping-interval-sec="30">
+      <scheduler hour="7" minute="0" skip-build-without-changes="true" />
+      <vcs enabled="false" quiet-period="60" quiet-period-mode="DO_NOT_USE">
+        <ignore-files>
+          <pattern>#Ignore format for vcs triggers changed.</pattern>
+          <pattern>#Please use relative file paths here.</pattern>
+          <pattern>#dev/qa</pattern>
+          <pattern>#dev/doc</pattern>
+          <pattern>#bin</pattern>
+        </ignore-files>
+      </vcs>
+      <scheduler hour="20" minute="0" skip-build-without-changes="false" />
+    </build-triggers>
+    <artifact-publishing paths="dev/build/release/*,dev/build/BUILD" />
+    <vcs-entry-ref root-id="1" set-label="false">
+      <checkout-rule rule="branches/FAS6_5-branch=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+</project>
+

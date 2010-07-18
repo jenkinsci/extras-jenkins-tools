@@ -1,0 +1,889 @@
+<metabuild>
+
+    <goals>
+        <defaultGoals>clean install</defaultGoals>
+        <overrideAllGoals>clean install</overrideAllGoals>
+    </goals>
+
+    <hudsonConfig>
+        <jdkHome>/java/jdk1.6.0_19</jdkHome>
+        <mavenHome>/java/apache/maven-2.2.1</mavenHome>
+        <antHome>/java/apache/ant-1.8.0</antHome>
+        <hudsonHome>/java/hudson</hudsonHome>
+        <jettyHome>/java/jetty</jettyHome>
+    </hudsonConfig>
+
+    <jobConfigs>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.profiling</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.pentaho.pentaho-components
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/deployment/deployment-installer-parent</scmURL>
+            <projectName>Deployment Agent Installer</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.reporting.external
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/targeting/com.fredhopper.targeting.SVD
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/targeting/com.fredhopper.targeting.core
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.enrich.linguistics
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.pentaho.pentaho-extensions
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/projects/com.fredhopper.etl.popken</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.pentaho.pentaho</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/projects/com.fredhopper.etl.otto_nl</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.reporting</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/tests/qa-tools</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.jobs.control</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.reporting.status
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/suggest/com.fredhopper.redirect</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/maven-plugins/deployment-agent-plugin</scmURL>
+            <projectName>Deployment Agent Maven plugin</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/maven-plugins/fas-installer</scmURL>
+            <projectName>FAS Installer</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/maven-plugins/fas-installer</scmURL>
+            <projectName>FAS setup Maven plugin</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/maven-plugins/jdbc-maven-plugin</scmURL>
+            <projectName>jdbc-maven-plugin</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/maven-plugins/maven-jaxb2-plugin</scmURL>
+            <projectName>maven-jaxb2-plugin</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/maven-plugins/quartz-maven-plugin</scmURL>
+            <projectName>quartz-maven-plugin</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/fredhopper_reporting</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches//fredhopper_reporting-1.0-branch</scmURL>
+            <projectName>Build [1.0-branch]</projectName>
+            <mavenGoals>clean package install</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/fsm/com.fredhopper.google.sitemap</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches/FAS6_3-branch</scmURL>
+            <projectName>API Documentation</projectName>
+            <antTargets>clean devdoc-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches/FAS6_3-branch</scmURL>
+            <projectName>checker build (linux)</projectName>
+            <antTargets>clean war reporting test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches//FAS6_3-branch</scmURL>
+            <projectName>snapshot build (linux)</projectName>
+            <antTargets>release</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/targeting/com.fredhopper.targeting.qserver
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/projects/com.fredhopper.etl.cbh</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.enrich</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/projects/com.fredhopper.etl.elmar</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/profiler/com.fredhopper.profiler</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/parent-pom</scmURL>
+            <projectName>FAS Parent Pom (Non-Recursive) Build</projectName>
+            <mavenGoals>clean install package -N</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.fms</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/fsm/com.fredhopper.google.adwords</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches/FAS6_5-branch</scmURL>
+            <projectName>API Documentation</projectName>
+            <antTargets>clean devdoc-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches/FAS6_5-branch</scmURL>
+            <projectName>checker build (linux)</projectName>
+            <antTargets>clean war reporting test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches/FAS6_5-branch</scmURL>
+            <projectName>snapshot build (linux)</projectName>
+            <antTargets>release</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches//FAS6_0_9_6-branch</scmURL>
+            <projectName>checker debug</projectName>
+            <antTargets>clean staging frontend reporting test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches//FAS6_0_9_6-branch</scmURL>
+            <projectName>checker release</projectName>
+            <antTargets>clean frontend staging reporting test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches//FAS6_0_9_6_3-branch</scmURL>
+            <projectName>FAS6_0_9_6_3-branch debug</projectName>
+            <antTargets>clean frontend staging reporting test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/atom-index</scmURL>
+            <projectName>Atom index</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/atom-storage</scmURL>
+            <projectName>Atom storage</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/analyzers/bulgarian-stemmer</scmURL>
+            <projectName>Bulgarian Stemmer</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/business-common-lang</scmURL>
+            <projectName>Business Common Lang</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/business-manager</scmURL>
+            <projectName>Business Manager</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/campaign-lang</scmURL>
+            <projectName>Campaign Lang</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/campaign-management</scmURL>
+            <projectName>Campaign Management (backend)</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/campaign-rest-api</scmURL>
+            <projectName>campaign-rest-api</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/config-model</scmURL>
+            <projectName>Config model</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/fas-api</scmURL>
+            <projectName>FAS API</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/fas-connection-utils</scmURL>
+            <projectName>FAS Connection Utils</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/fas-launcher</scmURL>
+            <projectName>FAS Launcher</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/fas-resources</scmURL>
+            <projectName>FAS Resources</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/fas-utils</scmURL>
+            <projectName>FAS Utils</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/tests/fvt</scmURL>
+            <projectName>FVT</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/heatmap</scmURL>
+            <projectName>Heatmap</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/jmx-client</scmURL>
+            <projectName>jmx-client</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/tests/junit-theory-helpers</scmURL>
+            <projectName>JUnit Theory Helpers</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/knowledge-model</scmURL>
+            <projectName>Knowledge Model</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/knowledge-model-basetypes-impl</scmURL>
+            <projectName>Knowledge Model - Basetypes Impl</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/tests/log-analyzer</scmURL>
+            <projectName>Log Analyzer</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/tests/logreplay</scmURL>
+            <projectName>Log Replay</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/parent-pom</scmURL>
+            <projectName>Parent POM</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/preview-pages</scmURL>
+            <projectName>Preview pages</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches//fas-parent/preview-pages-1.0-branch</scmURL>
+            <projectName>Preview pages [1.0-branch]</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/tests/qa-tools</scmURL>
+            <projectName>QA Tools</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/query-matcher</scmURL>
+            <projectName>Query Matcher</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/tests/reflective-matcher</scmURL>
+            <projectName>Reflective Matcher</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/tests/rules-debug</scmURL>
+            <projectName>Rules Debug</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches//fas-parent/tests/rules-debug/TGA-23</scmURL>
+            <projectName>Rules Debug TGA-23</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/schedule-lang</scmURL>
+            <projectName>Schedule Language</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/services</scmURL>
+            <projectName>Services</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/status-servlet</scmURL>
+            <projectName>Status servlet</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/tests/stress-test</scmURL>
+            <projectName>Stress Test</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/tests/stress-test-deployment-agent
+            </scmURL>
+            <projectName>Stress Test Deployment Agent</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/basetypes-adapters-impl</scmURL>
+            <projectName>Targeting - Basetypes Adapters Impl</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/targeting-management</scmURL>
+            <projectName>Targeting Management</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/tests/test-jar</scmURL>
+            <projectName>Test Jar</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/tests</scmURL>
+            <projectName>Tests</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/bm-translation-page</scmURL>
+            <projectName>Translation Page</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/i18n-api</scmURL>
+            <projectName>Translations API</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/i18n-rest-api</scmURL>
+            <projectName>Translations REST API</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/util-profile</scmURL>
+            <projectName>Util Profile</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/ws-client</scmURL>
+            <projectName>Webservice client</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/webservice-soap</scmURL>
+            <projectName>Webservice server</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.pentaho.pentaho-stubs
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/fsm/com.fredhopper.fsm.core</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/projects/com.fredhopper.etl.houseoffraser
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/common/hardware_info</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches/FAS6_1-branch</scmURL>
+            <projectName>API Documentation</projectName>
+            <antTargets>clean devdoc-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches/FAS6_1-branch</scmURL>
+            <projectName>checker build (linux)</projectName>
+            <antTargets>clean staging frontend reporting test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.suggest</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/rt-branches/FAS-5126-fas-parent-branch/atom-migration
+            </scmURL>
+            <projectName>Atom migration</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/rt-branches/FAS-5126-fas-parent-branch/config-atom
+            </scmURL>
+            <projectName>Config Atoms</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/rt-branches/FAS-5126</scmURL>
+            <projectName>FAS Integration Build (FAS-5126)</projectName>
+            <antTargets>clean staging test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/rt-branches/FAS-5126-fas-parent-branch/fas-messages
+            </scmURL>
+            <projectName>FAS Messages</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/rt-branches/FAS-5126-fas-parent-branch/fas-logger
+            </scmURL>
+            <projectName>FHLogger</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/targeting</scmURL>
+            <projectName>ruleengine</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/fredhopper_data_manager</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/helpers/data-manager-installation</scmURL>
+            <projectName>Deployment Agent support</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/helpers/fas_feeds</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.reporting.launcher
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/common/com.fredhopper.osgi.maven.java
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred//trunk/projects/webservice-reco</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.kettle</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.fsm</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.feeds</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.targeting</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/pageflow</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.reporting.install
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.core</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/helpers/travel</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred//trunk/projects/ABTesting</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.config</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/common/com.fredhopper.osgi.fas-lib</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred//trunk/projects/filter-api</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/fasfeedreader</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred//trunk/projects/manipulator-api</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/rt-branches/FAS-4401</scmURL>
+            <projectName>FAS-4401</projectName>
+            <antTargets>clean staging test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/rt-branches/FAS-5412</scmURL>
+            <projectName>FAS-5412</projectName>
+            <antTargets>clean staging test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/rt-branches/FAS-5779</scmURL>
+            <projectName>FAS-5779 (snapshot)</projectName>
+            <antTargets>release</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/rt-branches/FAS-5792</scmURL>
+            <projectName>FAS-5792 (snapshot)</projectName>
+            <antTargets>release</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches/FAS6_2-branch</scmURL>
+            <projectName>API Documentation</projectName>
+            <antTargets>clean devdoc-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches/FAS6_2-branch</scmURL>
+            <projectName>checker build (linux)</projectName>
+            <antTargets>clean staging frontend reporting test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches/FAS6_2_4-branch</scmURL>
+            <projectName>FAS6_2_4-branch checker build (linux)</projectName>
+            <antTargets>clean staging frontend reporting test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches/FAS6_2_5-branch</scmURL>
+            <projectName>FAS6_2_5-branch checker build (linux)</projectName>
+            <antTargets>clean staging frontend reporting test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches/FAS6_2_6-branch</scmURL>
+            <projectName>FAS6_2_6-branch checker build (linux)</projectName>
+            <antTargets>clean staging frontend reporting test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/branches//FAS6_2-branch</scmURL>
+            <projectName>snapshot build (linux)</projectName>
+            <antTargets>release</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/profiler/com.fredhopper.profiler.genclient
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/managed-services/controller</scmURL>
+            <projectName>Controller</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.fasconnector</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/com.fredhopper.targeting.woodhen</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.bi.sandbox</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>
+                svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.reporting.reporting-pentaho-extensions
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.fas_control</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/itemvariantcompressor-api</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/common/com.fredhopper.fms.config</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred//trunk/projects/spacemanagement</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.reporting.migration
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/projects/feed_preview/webservice-soap</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/projects/feed_preview/json</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/projects/seo-dynamic-sitemap</scmURL>
+            <projectName>SEO Dynamic Sitemap Parent</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/projects/seo-dynamic-sitemap</scmURL>
+            <projectName>SEO Dynamic Sitemap Parent - QServer profile</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/inmethod-grid</scmURL>
+            <projectName>inmethod grid + Fredhopper Patches</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/wicket</scmURL>
+            <projectName>Wicket + Fredhopper patches</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/profiler/com.fredhopper.profiler.sampleclient
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/helpers/tracking_pixel</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred//trunk/projects/constraint-api</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.fas_xml</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.skins</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/suggest/com.fredhopper.suggest</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>
+                svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/common/com.fredhopper.commons.backport-serviceloader
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/thomas_cook_pricing</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.reporting.common
+            </scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fred</scmURL>
+            <projectName>API Documentation</projectName>
+            <antTargets>clean devdoc-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fred</scmURL>
+            <projectName>checker build (linux)</projectName>
+            <antTargets>clean war reporting test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fred</scmURL>
+            <projectName>checker build (windows)</projectName>
+            <antTargets>clean war reporting test-reports-zip</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent/fas-installation</scmURL>
+            <projectName>fas-installation</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fred</scmURL>
+            <projectName>snapshot build (linux)</projectName>
+            <antTargets>release</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fred</scmURL>
+            <projectName>snapshot build (windows)</projectName>
+            <antTargets>release</antTargets>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/osgi/etl/com.fredhopper.etl.travel</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean install package package site:site</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://repo/local/svntree/fms/fms</scmURL>
+            <projectName>Build</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fas-parent//fredhopper-query-lang</scmURL>
+            <projectName>Query Lang Parent Build</projectName>
+            <mavenGoals>clean compile package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/drools</scmURL>
+            <projectName>drools</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/fastutil</scmURL>
+            <projectName>fastutil</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/javolution</scmURL>
+            <projectName>javolution</projectName>
+            <mavenGoals>clean package</mavenGoals>
+        </jobConfig>
+        <jobConfig>
+            <scmURL>svn+ssh://svn.fredhopper.com/local/svn/fred/trunk/lucene</scmURL>
+            <projectName>lucene</projectName>
+            <antTargets>generate-maven-artifacts</antTargets>
+        </jobConfig>
+    </jobConfigs>
+</metabuild>

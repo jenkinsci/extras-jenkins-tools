@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+
+<!ENTITY % common SYSTEM "common.dtd">
+%common;
+
+<!ELEMENT project (description?,(build-type)*)>
+<!ATTLIST project
+    id ID #REQUIRED
+>
+
+<!ELEMENT build-type (description?, options?, (run-parameters|parameters|requirements|build-triggers|artifact-publishing|artifact-dependencies|dependencies|keep|vcs-entry-ref)*)>
+
+<!ELEMENT description (#PCDATA)>
+
+<!ATTLIST option
+    name CDATA #REQUIRED
+    value CDATA #REQUIRED
+>
+
+<!ATTLIST build-type
+    id ID #REQUIRED
+    name CDATA #REQUIRED
+    run-type CDATA #IMPLIED
+    checkout-on-server (yes|no|true|false) #IMPLIED
+    checkout-on-agent (yes|no|true|false) #IMPLIED
+    checkout-dir CDATA #IMPLIED
+    working-dir CDATA #IMPLIED
+    labeling-type (NONE|ALWAYS|SUCCESSFUL_ONLY) #IMPLIED
+    labeling-pattern CDATA #IMPLIED
+>
+
+<!ELEMENT artifact-publishing EMPTY>
+<!ATTLIST artifact-publishing
+    paths CDATA #REQUIRED
+>
+
+<!ELEMENT vcs-entry-ref (checkout-rule)*>
+
+<!ATTLIST vcs-entry-ref
+    root-id CDATA #REQUIRED
+    set-label (yes|no|true|false) #IMPLIED
+>
+    
+<!ELEMENT checkout-rule EMPTY>
+<!ATTLIST checkout-rule
+    rule CDATA #REQUIRED
+>

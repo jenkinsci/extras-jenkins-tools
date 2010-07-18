@@ -1,0 +1,29 @@
+<project>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.jvnet.hudson.tools</groupId>
+    <artifactId>tc2hudson</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jvnet.hudson.tools</groupId>
+                <artifactId>tc2hudson</artifactId>
+
+                <configuration>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>convert</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

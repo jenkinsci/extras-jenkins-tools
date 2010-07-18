@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-roots modification-check-interval="60" quiet-period="60">
+  <vcs-root id="1" name="Fredhopper SVN (amsterdam)" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/local/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="2" name="FBI Root" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/osgi" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="3" name="FAS-WS CVS Project (fas5/FAS6.0.9 branch)" type="cvs">
+    <scope level="project" project-id="project10" />
+    <param name="cvs-branch-name" value="fasws_2_0_4-branch" />
+    <param name="cvs-quiet-period" value="3" />
+    <param name="cvs-root" value=":ssh:system@cvs.fredhopper.com:/store/src" />
+    <param name="cvs-tag-mode" value="BRANCH" />
+    <param name="local-server-command" value="server" />
+    <param name="module-name" value="fas-ws" />
+    <param name="ssh-path-to-ppk" value="/home/fas/.ssh/id_dsa" />
+    <param name="ssh-port" value="22" />
+    <param name="ssh-use-ppk" value="true" />
+    <param name="zip-compression" value="true" />
+  </vcs-root>
+  <vcs-root id="4" name="FAS branches/" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/branches/" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="5" name="FAS 5.3" type="cvs">
+    <scope level="global" />
+    <param name="cvs-branch-name" value="FAS5_3_0-branch" />
+    <param name="cvs-quiet-period" value="3" />
+    <param name="cvs-root" value=":ssh:system@cvs.fredhopper.com:/store/src" />
+    <param name="cvs-tag-mode" value="BRANCH" />
+    <param name="local-server-command" value="server" />
+    <param name="module-name" value="fred" />
+    <param name="ssh-path-to-ppk" value="/home/fas/.ssh/id_dsa" />
+    <param name="ssh-port" value="22" />
+    <param name="ssh-use-ppk" value="true" />
+    <param name="zip-compression" value="true" />
+  </vcs-root>
+  <vcs-root id="6" name="FAS rt-branches/" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/rt-branches" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="7" name="Config Server" type="svn">
+    <scope level="project" project-id="project50" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="ssh-key-file" value="/local/modules/fas6/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/local/modules/fas6/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/config-server" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="8" name="FBI Reporting Root" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="ssh-key-file" value="/local/modules/fas6/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/local/modules/fas6/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/osgi/reporting" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="9" name="FBI FSS Root" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/osgi/suggest" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="10" name="FBI System Synonyms Root" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="ssh-key-file" value="/local/modules/fas6/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/local/modules/fas6/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/osgi/system-synonym" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="12" name="Demo base" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="secure:svn-password" value="zxxc97e47dfsfsfdf!1sd03cbe80d301b" />
+    <param name="svn-config-directory" value="/local/modules/fas6/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://ronny@pernod/local/svn-projects/demo" />
+    <param name="user" value="ronny" />
+  </vcs-root>
+  <vcs-root id="13" name="FMS root" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="secure:svn-password" value="zxxc97e47dfsfsfdf!1sd03cbe80d301b" />
+    <param name="svn-config-directory" value="/local/modules/fas6/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://ronny@pernod/local/svn-projects/fms" />
+    <param name="user" value="ronny" />
+  </vcs-root>
+  <vcs-root id="14" name="Connector" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/connector" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="15" name="FAS tags" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/tags" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="17" name="Copy of Demo base" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_rsa_repository" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="url" value="svn+ssh://repo/local/svntree/demo/" />
+    <param name="user" value="teamcity" />
+  </vcs-root>
+  <vcs-root id="16" name="FMS root (tequila)" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_rsa_repository" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://repo/local/svntree/fms" />
+    <param name="user" value="teamcity" />
+  </vcs-root>
+  <vcs-root id="19" name="ui-tests" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/tests/ui" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="18" name="Services Tag Base" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/tags/services" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="25" name="fas-parent-query-lang" type="svn">
+    <scope level="project" project-id="project169" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/fas-parent/fredhopper-query-lang/query-lang" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="24" name="Deployment" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/deployment" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="27" name="fas-parent (1)" type="svn">
+    <scope level="project" project-id="project184" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/fas-parent" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="26" name="FAS Parent" type="svn">
+    <scope level="project" project-id="project169" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/fas-parent/" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="51" name="Managed Services" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/managed-services" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="50" name="FAS Parent (shared)" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/fas-parent" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="55" name="Fredhopper Platform (1)" type="svn">
+    <scope level="project" project-id="project201" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/platform" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="54" name="maven-plugins" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/maven-plugins" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="53" name="Deploy Artifacts" type="svn">
+    <scope level="project" project-id="project197" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/deploy" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="52" name="Fredhopper Platform" type="svn">
+    <scope level="project" project-id="project197" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/platform" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="58" name="parent-pom" type="svn">
+    <scope level="project" project-id="project204" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/fas-parent/" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="57" name="FAS Parent tags" type="svn">
+    <scope level="global" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/tags/fas-parent" />
+    <param name="user" value="system" />
+  </vcs-root>
+  <vcs-root id="56" name="Deploy Artifacts (1)" type="svn">
+    <scope level="project" project-id="project201" />
+    <param name="externals-mode" value="externals-none" />
+    <param name="labelingPatterns" value="trunk=&gt;tags" />
+    <param name="ssh-key-file" value="/home/fas/.ssh/id_dsa" />
+    <param name="svn-config-directory" value="/home/fas/.subversion" />
+    <param name="svn-use-default-config-directory" value="true" />
+    <param name="url" value="svn+ssh://svnrepository.com/local/svn/fred/trunk/deploy" />
+    <param name="user" value="system" />
+  </vcs-root>
+</vcs-roots>
+

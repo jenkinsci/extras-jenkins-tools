@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "../project-config.dtd">
+
+<project id="project184">
+  <description>A parent TC project for all sub-projects of fas-parent. Here each sub-project will listen for changes in its own SVN tree and will upload only its artifacts</description>
+</project>
+

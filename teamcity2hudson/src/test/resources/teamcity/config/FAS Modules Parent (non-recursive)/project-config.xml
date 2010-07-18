@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "../project-config.dtd">
+
+<project id="project204">
+  <build-type id="bt742" name="FAS Parent Pom (Non-Recursive) Build" run-type="Maven2" checkout-on-server="true" checkout-on-agent="false" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+    <description />
+    <requirements />
+    <run-parameters>
+      <param name="goals" value="clean install deploy -N" />
+      <param name="maven.home" value="/tools/apache-maven-2.2.1" />
+      <param name="pomLocation" value="pom.xml" />
+    </run-parameters>
+    <parameters />
+    <build-triggers sleeping-interval-sec="30">
+      <vcs enabled="true" quiet-period="60" quiet-period-mode="USE_DEFAULT" />
+    </build-triggers>
+    <vcs-entry-ref root-id="50" set-label="false">
+      <checkout-rule rule="parent-pom=&gt;/" />
+    </vcs-entry-ref>
+  </build-type>
+</project>
+
