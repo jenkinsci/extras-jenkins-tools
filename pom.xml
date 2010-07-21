@@ -3,6 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>extras</artifactId>
+        <groupId>org.jvnet.hudson</groupId>
+        <version>1.7</version>
+    </parent>
 
     <groupId>org.jvnet.hudson.tools</groupId>
     <artifactId>hudson-tools-masterbuild</artifactId>
@@ -251,23 +256,5 @@
         <developerConnection>scm:https://svn.dev.java.net/svn/hudson/trunk/hudson/extras/hudson-tools</developerConnection>
         <connection>scm:svn:https://svn.dev.java.net/svn/hudson/trunk/hudson/extras/hudson-tools</connection>
     </scm>
-
-    <distributionManagement>
-        <repository>
-            <id>jvnet-releases</id>
-            <url>http://TODO/</url>
-            <uniqueVersion>false</uniqueVersion>
-        </repository>
-        <snapshotRepository>
-            <id>jvnet-snapshots</id>
-            <url>http://TODO/</url>
-            <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
-        <site>
-            <id>jvnet-website</id>
-            <url>http://TODO/</url>            
-        </site>
-    </distributionManagement>
-
 </project>
         
